@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор (HW)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Калькулятор</h1>
+
+      <section class="panel">
+        <label class="field">
+          <span>Число 1</span>
+          <input
+            id="num1"
+            type="text"
+            inputmode="decimal"
+            placeholder="Напр. 12.5"
+          />
+        </label>
+
+        <label class="field">
+          <span>Операція</span>
+          <input id="op" type="text" placeholder="+ - * /" maxlength="1" />
+        </label>
+
+        <label class="field">
+          <span>Число 2</span>
+          <input
+            id="num2"
+            type="text"
+            inputmode="decimal"
+            placeholder="Напр. 3"
+          />
+        </label>
+
+        <button id="calcBtn" type="button">Розрахувати</button>
+      </section>
+
+      <section class="keyboard" aria-label="Клавіатура калькулятора">
+        <div class="keys" id="keys">
+          <button type="button" class="key" data-kind="digit" data-value="7">
+            7
+          </button>
+          <button type="button" class="key" data-kind="digit" data-value="8">
+            8
+          </button>
+          <button type="button" class="key" data-kind="digit" data-value="9">
+            9
+          </button>
+
+          <button type="button" class="key op" data-kind="op" data-value="/">
+            /
+          </button>
+
+          <button type="button" class="key" data-kind="digit" data-value="4">
+            4
+          </button>
+          <button type="button" class="key" data-kind="digit" data-value="5">
+            5
+          </button>
+          <button type="button" class="key" data-kind="digit" data-value="6">
+            6
+          </button>
+
+          <button type="button" class="key op" data-kind="op" data-value="*">
+            *
+          </button>
+
+          <button type="button" class="key" data-kind="digit" data-value="1">
+            1
+          </button>
+          <button type="button" class="key" data-kind="digit" data-value="2">
+            2
+          </button>
+          <button type="button" class="key" data-kind="digit" data-value="3">
+            3
+          </button>
+
+          <button type="button" class="key op" data-kind="op" data-value="-">
+            -
+          </button>
+
+          <button
+            type="button"
+            class="key wide"
+            data-kind="digit"
+            data-value="0"
+          >
+            0
+          </button>
+          <button type="button" class="key" data-kind="dot" data-value=".">
+            .
+          </button>
+
+          <button type="button" class="key op" data-kind="op" data-value="+">
+            +
+          </button>
+
+          <button
+            type="button"
+            class="key clear"
+            data-kind="clear"
+            data-value="clear"
+          >
+            C
+          </button>
+        </div>
+
+        <p class="hint">
+          Порада: клік по клавішах додає символ у активне поле (останнє в яке ти
+          клікав).
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
