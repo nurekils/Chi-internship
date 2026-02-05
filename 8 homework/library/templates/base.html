@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+    <link rel="stylesheet" href="{% static 'library/css/base.css' %}">
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'home' %}">LIBRARY</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    Made by NIKITA LI
+</footer>
+
+</body>
+</html>

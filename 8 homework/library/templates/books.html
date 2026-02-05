@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Books</h1>
+
+<form method="get" class="search-form">
+    <input
+        type="text"
+        name="q"
+        placeholder="Search by title..."
+        value="{{ query|default:'' }}"
+    >
+    <button type="submit">Search</button>
+</form>
+
+{% if books %}
+    <div class="books-grid">
+        {% for book in books %}
+            <div class="book-card">
+                <h2 class="book-title">{{ book.title }}</h2>
+
+                <p class="book-date">
+                    <strong>Published:</strong> {{ book.published_date }}
+                </p>
+
+                <p class="book-description">
+                    {{ book.description }}
+                </p>
+
+                <div class="book-author">
+                    <h3>Author</h3>
+                    <p><strong>Name:</strong> {{ book.author.name }}</p>
+
+                    {% if book.author.email %}
+                        <p><strong>Email:</strong> {{ book.author.email }}</p>
+                    {% endif %}
+
+                    {% if book.author.bio %}
+                        <p class="author-bio">{{ book.author.bio }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No books found.</p>
+{% endif %}
+
+{% endblock %}

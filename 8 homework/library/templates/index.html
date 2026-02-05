@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Welcome to the Library</h1>
+
+<div class="home-links">
+    <a href="{% url 'authors_list' %}" class="home-card">
+        <h2>Authors</h2>
+        <p>View all authors and their books</p>
+    </a>
+
+    <a href="{% url 'books_list' %}" class="home-card">
+        <h2>Books</h2>
+        <p>Browse all available books</p>
+    </a>
+</div>
+{% endblock %}

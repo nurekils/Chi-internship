@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="{% url 'authors_list' %}" class="back-link">← Back to authors</a>
+
+<h1>Books by {{ author.name }}</h1>
+
+{% if books %}
+    <div class="books-grid">
+        {% for book in books %}
+            <div class="book-card">
+                <h2 class="book-title">{{ book.title }}</h2>
+
+                <p class="book-date">
+                    <strong>Published:</strong> {{ book.published_date }}
+                </p>
+
+                <p class="book-description">
+                    {{ book.description }}
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>This author has no books yet.</p>
+{% endif %}
+
+{% endblock %}

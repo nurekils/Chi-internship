@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block content %}
+<h1>Authors</h1>
+
+{% if authors %}
+<div class="authors-grid">
+  {% for author in authors %}
+  <div class="author-card">
+    <h2 class="author-name">
+      <a href="{% url 'author_books' author.id %}"> {{ author.name }} </a>
+    </h2>
+
+    <p><strong>Books:</strong> {{ author.books_count }}</p>
+
+    {% if author.email %}
+    <p><strong>Email:</strong> {{ author.email }}</p>
+    {% endif %} {% if author.bio %}
+    <p class="author-bio">{{ author.bio }}</p>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<p>No authors yet.</p>
+{% endif %} {% endblock %}
